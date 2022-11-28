@@ -1,5 +1,10 @@
-<?php include 'config.php'; ?>
-<?php include 'layout/header.php';
+<?php
+$active = 'absen';
+$title = 'Data Absen | Absensi';
+include 'config.php';
+include 'layout/header.php';
+
+
 
 session_start(); ?>
 

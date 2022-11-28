@@ -1,5 +1,10 @@
-<?php include 'config.php'; ?>
-<?php include 'layout/header.php';
+<?php
+$title = 'Data Siswa | Absensi';
+$active = 'siswa';
+include 'config.php';
+include 'layout/header.php';
+
+
 session_start(); ?>
 
 <div class="container">

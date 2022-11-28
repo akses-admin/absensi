@@ -1,6 +1,6 @@
 <?php
 $active = 'laporan';
-$title = 'Laporan Siswa | Admin';
+$title = 'Laporan Siswa | Absensi';
 include("config.php");
 include("layout/header.php");
 
@@ -15,7 +15,7 @@ $row = mysqli_num_rows($queryRow);
 
 <div class="container">
     <center>
-        <h1 class="mt-5">LAPORAN SISWA</h1>
+        <h1 class="mt-5">LAPORAN ABSENSI SISWA</h1>
     </center>
     <br>
     <form method="POST">
@@ -56,13 +56,13 @@ $row = mysqli_num_rows($queryRow);
                 $filter = "AND tanggal >= '$dari_tgl'  AND tanggal <= '" . $sampai_tgl . "'";
                 // die($filter);
             }
-            $querySiswa = mysqli_query($conn, " SELECT *,
+            $queryAbsensi = mysqli_query($conn, " SELECT *,
                                                     (SELECT COUNT(*) FROM tbl_absensi a WHERE a.id_siswa  = tbl_siswa.id_siswa AND keterangan = 'Izin' " . $filter . ") AS count_izin,
                                                     (SELECT COUNT(*) FROM tbl_absensi b WHERE b.id_siswa  = tbl_siswa.id_siswa AND keterangan = 'Sakit'" . $filter . ") AS count_sakit,
                                                     (SELECT COUNT(*) FROM tbl_absensi c WHERE c.id_siswa  = tbl_siswa.id_siswa AND keterangan = 'Alfa' " . $filter . ") AS count_alfa  
                                                 FROM tbl_siswa");
 
-            foreach ($querySiswa as $absensi) { ?>
+            foreach ($queryAbsensi as $absensi) { ?>
                 <tr class="text-center">
                     <td><?= $no++ ?></td>
                     <td><?= $absensi['nama'] ?></td>

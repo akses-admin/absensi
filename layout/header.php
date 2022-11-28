@@ -1,5 +1,5 @@
 <?php
-$title = "Absensi XII RPL";
+include 'config.php';
 $date = date('y/m/d');
 date_default_timezone_set("Asia/Jakarta")
 ?>
@@ -51,16 +51,16 @@ date_default_timezone_set("Asia/Jakarta")
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="dasboard.php">Dasboard</a>
+                        <a class="nav-link <?= $active == 'dashboard' ? 'active' : '' ?>" aria-current="page" href="dasboard.php">Dasboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="siswa.php">Siswa</a>
+                        <a class="nav-link <?= $active == 'siswa' ? 'active' : '' ?> " href="siswa.php">Siswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="absen.php">Absen</a>
+                        <a class="nav-link <?= $active == 'absen' ? 'active' : '' ?>" href="absen.php">Absen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="laporan.php">Laporan Absen</a>
+                        <a class="nav-link <?= $active == 'laporan' ? 'active' : '' ?>" href="laporan.php">Laporan Absen</a>
                     </li>
                 </ul>
             </div>
